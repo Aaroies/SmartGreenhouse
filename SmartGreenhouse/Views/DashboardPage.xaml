@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartGreenhouse.Views.DashboardPage"
+             Title="Dashboard">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="Live Readings" FontSize="20" />
+            <Frame CornerRadius="12" Padding="12" Margin="0,6">
+                <VerticalStackLayout>
+                    <Label Text="Temperature" FontAttributes="Bold" />
+                    <Label Text="{Binding CurrentReading.TemperatureC, StringFormat='{0} °C'}" FontSize="24" />
+                    <Label Text="Humidity" FontAttributes="Bold" Margin="0,8,0,0"/>
+                    <Label Text="{Binding CurrentReading.Humidity, StringFormat='{0} %'}" FontSize="20" />
+                    <Label Text="Soil Moisture" FontAttributes="Bold" Margin="0,8,0,0" />
+                    <Label Text="{Binding CurrentReading.SoilMoisture, StringFormat='{0} %'}" FontSize="20" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <HorizontalStackLayout Spacing="12">
+                <Button Text="Control Panel" Command="{Binding ToControlCommand}" />
+                <Button Text="History" Command="{Binding ToHistoryCommand}" />
+            </HorizontalStackLayout>
+
+            <Button Text="Start Sensor" Command="{Binding StartCommand}" />
+            <Button Text="Stop Sensor" Command="{Binding StopCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

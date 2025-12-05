@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartGreenhouse.Views.ControlPanelPage"
+             Title="Control Panel">
+
+    <VerticalStackLayout Padding="20" Spacing="18">
+        <Label Text="Actuators" FontSize="20" />
+        <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+            <Label Text="Fan" VerticalOptions="Center" />
+            <Switch IsToggled="{Binding FanOn}" />
+            <Button Text="Toggle" Command="{Binding ToggleFanCommand}" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="12" VerticalOptions="Center">
+            <Label Text="Pump" VerticalOptions="Center" />
+            <Switch IsToggled="{Binding PumpOn}" />
+            <Button Text="Toggle" Command="{Binding TogglePumpCommand}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
